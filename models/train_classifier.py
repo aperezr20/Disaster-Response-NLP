@@ -73,7 +73,7 @@ def build_model():
         'clf__estimator__max_depth':[None, 10, 20]
     }
 
-    cv = GridSearchCV(pipeline, param_grid=parameters)
+    cv = GridSearchCV(pipeline, param_grid=parameters, verbose=5, n_jobs=-1)
     
     return cv
     
