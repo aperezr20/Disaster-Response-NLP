@@ -98,3 +98,7 @@ You can do that by following the instructions below
 3. Run your web app: `python run.py`
 
 4. Click on the address displayed on the terminal
+
+## Acknowledgements<a name="acknowledgements"></a>
+
+Credits to Appen for the data and Udacity for providing the projects' structure and base code.
