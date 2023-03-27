@@ -18,7 +18,7 @@ pip install requirements.txt
 
 ## Project Motivation<a name="motivation"></a>
 
-The motivation behind this project is to apply data engineering to analyze disaster data from [Appen] (https://appen.com/#data_for_ai) and build a predicting model for a web app that can classify disaster messages. The goal is to create a machine learning pipeline that categorizes these messages, allowing emergency workers to send them to the appropriate disaster relief agency quickly.
+The motivation behind this project is to apply data engineering to analyze disaster data from Appen and build a predicting model for a web app that can classify disaster messages. The goal is to create a machine learning pipeline that categorizes these messages, allowing emergency workers to send them to the appropriate disaster relief agency quickly.
 
 The project's ultimate objective is to improve the efficiency and effectiveness of disaster response efforts. By providing a tool that can accurately categorize disaster messages, emergency workers can focus their efforts on addressing the most urgent needs, saving time and potentially saving lives.
 
