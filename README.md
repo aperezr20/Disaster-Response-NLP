@@ -33,7 +33,7 @@ This repo is organized in three main folders:
 
 ## Results<a name="results"></a>
 
-# Model Performance Metrics 
+### Model Performance Metrics 
 
 During the optimization of the models, the classifier that had a better performance on the dataset was the multilayer perceptron. The model conducted the following metrics on the test split:
 
@@ -79,7 +79,7 @@ During the optimization of the models, the classifier that had a better performa
 | **weighted avg**       | **0.48**  | **0.47** | **0.47** | **12511** |
 | **samples avg**        | **0.33**  | **0.28** | **0.27** | **12511** |
 
-# Get your own results with the API
+### Get your own results with the API
 
 Also, you can type your own messages in the API so the trained MLP classifier returns the predicted category!
 
