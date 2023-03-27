@@ -45,7 +45,7 @@ def load_data(database_filepath):
     df = df.replace(2, 1)
 
     categories = list(df.columns[5:])
-    X = df[['message']]
+    X = df['message']
     y = df[categories]
 
     return X, y, categories
@@ -62,7 +62,7 @@ def tokenize(text):
     clean_tokens (list): List of cleaned tokens
     """
 
-    # Tokenizer
+    # tokenizer
     tokens = word_tokenize(text.lower())
     
     # initiate lemmatizer
@@ -87,14 +87,13 @@ def build_model():
     cv (GridSearchCV): A grid search object with a pipeline
     """
     
-    # Classifiers for grid search
+    # classifiers for grid search
     clf_models = {
         'Random Forest': [RandomForestClassifier()],
         'Perceptron': [MLPClassifier()],
-        'KNN': [KNeighborsClassifier()]
     }
 
-    # Classifiers' parameters for grid search
+    # classifiers' parameters for grid search
     clf_params = [
         {
             'clf__estimator': clf_models['Random Forest'],
@@ -103,11 +102,8 @@ def build_model():
         {
             'clf__estimator': clf_models['Perceptron'],
             'clf__estimator__activation': ['tanh', 'relu'],
-            'clf__estimator__hidden_layer_sizes':[10]
-        },
-        {
-            'clf__estimator': clf_models['KNN'],
-            'clf__estimator__n_neighbors': [3, 5]
+            'clf__estimator__hidden_layer_sizes':[10],
+            'clf__estimator__max_iter': [300]
         }
     ]
     
@@ -146,7 +142,7 @@ def evaluate_model(model, X_test, Y_test, category_names):
     
     """
 
-    y_pred = model.predict(X_test.values.flatten())
+    y_pred = model.predict(X_test)
     
     report = classification_report(Y_test.astype(int), y_pred.astype(int), target_names=category_names)
     
@@ -180,7 +176,7 @@ def main():
         model = build_model()
         
         print('Training model...')
-        model.fit(X_train.values.flatten(), Y_train)
+        model.fit(X_train, Y_train)
         
         print('Evaluating model...')
         evaluate_model(model, X_test, Y_test, category_names)
